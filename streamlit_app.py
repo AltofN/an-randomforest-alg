@@ -123,7 +123,7 @@ st.dataframe(df_prediction_proba,
 penguins_species = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
 st.success(str(penguins_species[prediction][0]))
 
-
+st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
 st.info('Modified and changes from data professor')
 st.info('by Altof N')
 
