@@ -70,8 +70,9 @@ y = y_raw.apply(target_encode)
 with st.expander('Data preparation'):
   st.write('**Encoded X (input penguin)**')
   input_row
+  y = y_raw.map({'Adelie': 0, 'Chinstrap': 1, 'Gentoo': 2})
   st.write('**Encoded y**')
-  st.dataframe(y_encoded)
+  y
 
 
 # Model training and inference
