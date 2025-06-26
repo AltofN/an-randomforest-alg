@@ -71,7 +71,7 @@ with st.expander('Data preparation'):
   st.write('**Encoded X (input penguin)**')
   input_row
   st.write('**Encoded y**')
-  y
+  st.dataframe(y_encoded)
 
 
 # Model training and inference
