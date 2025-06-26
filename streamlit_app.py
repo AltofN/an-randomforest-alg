@@ -71,28 +71,10 @@ with st.expander('Data preparation'):
     st.dataframe(y_encoded)
 
 # Train model (cached)
-@st.cache_resource
-def train_model(X, y):
-    clf = RandomForestClassifier()
-    clf.fit(X, y)
-    return clf
+clf = RandomForestClassifier()
+clf.fit(X_raw,y)
 
-clf = train_model(X_encoded, y_encoded)
+prediction =clf.predict(input_row)
+prediction_proba = clf.predict_proba(input_row)
 
-# Make predictions
-prediction = clf.predict(input_encoded)
-prediction_proba = clf.predict_proba(input_encoded)
-
-# Format output
-df_prediction_proba = pd.DataFrame(prediction_proba, columns=['Adelie', 'Chinstrap', 'Gentoo'])
-
-# Display predicted species
-st.subheader('Predicted Species')
-st.dataframe(df_prediction_proba, column_config={
-    'Adelie': st.column_config.ProgressColumn('Adelie', format='%f', min_value=0, max_value=1),
-    'Chinstrap': st.column_config.ProgressColumn('Chinstrap', format='%f', min_value=0, max_value=1),
-    'Gentoo': st.column_config.ProgressColumn('Gentoo', format='%f', min_value=0, max_value=1),
-}, hide_index=True)
-
-species_labels = np.array(['Adelie', 'Chinstrap', 'Gentoo'])
-st.success(f"Predicted species: {species_labels[prediction[0]]}")
+prediction_proba
