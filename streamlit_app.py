@@ -3,9 +3,11 @@ import numpy as np
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 
-st.title('🤖 Machine Learning App')
+st.title('Random Forest Cluster - Machinelearning App')
 
-st.info('This is app builds a machine learning model!')
+st.info('Test module for Penguin variants in Antartica')
+
+st. info('This dataset was collected as part of ecological monitoring by researchers with the Palmer Station Long Term Ecological Research (LTER) program. It includes measurements on Adélie, Chinstrap, and Gentoo penguins.')
 
 with st.expander('Data'):
   st.write('**Raw data**')
