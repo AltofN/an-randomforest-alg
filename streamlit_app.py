@@ -125,5 +125,5 @@ st.success(str(penguins_species[prediction][0]))
 
 st.markdown("<br><br><br><br><br>", unsafe_allow_html=True)
 st.info('Modified and changes from data professor')
-st.info('by Altof N')
+st.info('by Altof N...')
 
